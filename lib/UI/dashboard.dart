@@ -20,6 +20,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         tabs: [TabData(iconData: CupertinoIcons.graph_square, title: "Store Analytics"),
         TabData(iconData: CupertinoIcons.home, title: "Dashboard"),
         TabData(iconData: CupertinoIcons.cart, title: "Orders")],
+        initialSelection: 1,
         circleColor: HypeColors.HypeBronze,
         inactiveIconColor: HypeColors.HypeBronze,
         barBackgroundColor: HypeColors.HypeFresia,

@@ -1,3 +1,4 @@
+import 'package:bar_manager/UI/dashboard.dart';
 import 'package:bar_manager/Utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +49,12 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const DashboardScreen()),
+              );
+            },
             child: const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
