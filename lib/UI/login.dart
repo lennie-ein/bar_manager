@@ -47,7 +47,25 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(4.0)))),
             ),
           ),
-          TextButton(onPressed: () {}, child: Text("Login"), style: ButtonStyle(backgroundColor: MaterialStateProperty.all(HypeColors.HypeLightBronze)),)
+          TextButton(
+            onPressed: () {},
+            child: const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                "LOGIN",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                    
+                ),
+              ),
+            ),
+            style: ButtonStyle(
+                backgroundColor:
+                    MaterialStateProperty.all(HypeColors.HypeLightBronze),
+                elevation: MaterialStateProperty.all(10.0),
+                shadowColor: MaterialStateProperty.all(HypeColors.HypeBronze)),
+          )
         ],
       ),
     );
