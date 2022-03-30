@@ -82,9 +82,9 @@ class _DashboardScreenState extends State<DashboardScreen>
                         "Dashboard",
                         style: TextStyle(
                             color: HypeColors.HypeBronze,
-                            fontSize: 40,
+                            fontSize: 35,
                             fontWeight: FontWeight.bold,
-                            fontFamily: GoogleFonts.bangers().fontFamily),
+                            fontFamily: GoogleFonts.balooTamma().fontFamily),
                       ),
                     ],
                   ),

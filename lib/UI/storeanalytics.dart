@@ -10,8 +10,6 @@ class StoreAnalyticsScreen extends StatefulWidget {
 class _StoreAnalyticsScreenState extends State<StoreAnalyticsScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Store Analytics"),),
-    );
+    return Container(  );
   }
 }
