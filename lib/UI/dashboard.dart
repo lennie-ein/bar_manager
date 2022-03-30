@@ -138,37 +138,40 @@ class _DashboardScreenState extends State<DashboardScreen>
                     )
                   ],
                 ),
-                SizedBox(height: 20.0,),
+                SizedBox(height: 40.0,),
                 //Graph to be displayed
                 Padding(
                   padding: const EdgeInsets.only(top: 40.0),
-                  child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      child: SfCartesianChart(
-                          primaryXAxis: CategoryAxis(
-                              labelPlacement: LabelPlacement.onTicks,
-                              labelPosition: ChartDataLabelPosition.outside),
-                          // Chart title
-                          title: ChartTitle(
-                              text: 'Weekly Sales Analysis',
-                              textStyle: TextStyle(
-                                  color: HypeColors.HypeBronze,
-                                  fontWeight: FontWeight.bold)),
-                          // Enable legend
-                          legend: Legend(isVisible: true),
-                          // Enable tooltip
-                          tooltipBehavior: TooltipBehavior(enable: true),
-                          enableAxisAnimation: true,
-                          series: <ChartSeries<_SalesData, String>>[
-                            SplineSeries<_SalesData, String>(
-                                dataSource: data,
-                                xValueMapper: (_SalesData sales, _) =>
-                                    sales.year,
-                                yValueMapper: (_SalesData sales, _) =>
-                                    sales.sales,
-                                name: '',
-                                yAxisName: 'Bottles in Thousands'),
-                          ])),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Container(
+                      width: MediaQuery.of(context).size.width + 50,
+                        child: SfCartesianChart(
+                            primaryXAxis: CategoryAxis(
+                                labelPlacement: LabelPlacement.onTicks,
+                                labelPosition: ChartDataLabelPosition.outside),
+                            // Chart title
+                            title: ChartTitle(
+                                text: 'Weekly Sales Analysis',
+                                textStyle: TextStyle(
+                                    color: HypeColors.HypeBronze,
+                                    fontWeight: FontWeight.bold)),
+                            // Enable legend
+                            legend: Legend(isVisible: true),
+                            // Enable tooltip
+                            tooltipBehavior: TooltipBehavior(enable: true),
+                            enableAxisAnimation: true,
+                            series: <ChartSeries<_SalesData, String>>[
+                              SplineSeries<_SalesData, String>(
+                                  dataSource: data,
+                                  xValueMapper: (_SalesData sales, _) =>
+                                      sales.year,
+                                  yValueMapper: (_SalesData sales, _) =>
+                                      sales.sales,
+                                  name: '',
+                                  yAxisName: 'Bottles in Thousands'),
+                            ])),
+                  ),
                 )
               ],
             ),
