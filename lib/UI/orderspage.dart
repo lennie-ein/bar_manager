@@ -7,7 +7,7 @@ class OrdersScreen extends StatefulWidget {
   State<OrdersScreen> createState() => _OrdersScreenState();
 }
 
-class _OrdersScreenState extends State<OrdersScreen> {
+class _OrdersScreenState extends State<OrdersScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Container();

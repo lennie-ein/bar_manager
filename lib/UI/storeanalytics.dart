@@ -7,7 +7,7 @@ class StoreAnalyticsScreen extends StatefulWidget {
   State<StoreAnalyticsScreen> createState() => _StoreAnalyticsScreenState();
 }
 
-class _StoreAnalyticsScreenState extends State<StoreAnalyticsScreen> {
+class _StoreAnalyticsScreenState extends State<StoreAnalyticsScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
