@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:motion_tab_bar_v2/motion-tab-bar.dart';
 import 'package:ms_undraw/ms_undraw.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -16,6 +17,15 @@ class DashboardScreen extends StatefulWidget {
 
 class _DashboardScreenState extends State<DashboardScreen>
     with TickerProviderStateMixin {
+  List<_SalesData> data = [
+    _SalesData('Mon', 35),
+    _SalesData('Tue', 28),
+    _SalesData('Wed', 34),
+    _SalesData('Thur', 32),
+    _SalesData('Fri', 40),
+    _SalesData('Sat', 45),
+    _SalesData('Sun', 20)
+  ];
   TabController? _tabController;
 
   @override
@@ -63,6 +73,7 @@ class _DashboardScreenState extends State<DashboardScreen>
             const StoreAnalyticsScreen(),
             Column(
               children: [
+                //Dashboard heading
                 Padding(
                   padding: const EdgeInsets.only(left: 10.0, top: 10),
                   child: Row(
@@ -78,6 +89,7 @@ class _DashboardScreenState extends State<DashboardScreen>
                     ],
                   ),
                 ),
+                //Containers to display available bars or distribution points in the rows below
                 Row(
                   children: [
                     Padding(
@@ -85,18 +97,19 @@ class _DashboardScreenState extends State<DashboardScreen>
                       child: Container(
                         width: 150,
                         height: 150,
-
                         child: UnDraw(
                             illustration: UnDrawIllustration.beer,
                             color: HypeColors.HypeLightBlue),
                         decoration: BoxDecoration(
                             color: HypeColors.HypeDeepSea,
-                            boxShadow: const [BoxShadow(
-                              color: Colors.black26,
-                              spreadRadius: 5.0,
-                              blurRadius: 10.0,
-                              offset: Offset(0, 2),
-                            )],
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Colors.black26,
+                                spreadRadius: 5.0,
+                                blurRadius: 10.0,
+                                offset: Offset(0, 2),
+                              )
+                            ],
                             borderRadius:
                                 BorderRadius.all(Radius.circular(15.0))),
                       ),
@@ -106,23 +119,56 @@ class _DashboardScreenState extends State<DashboardScreen>
                       child: Container(
                         width: 150,
                         height: 150,
-
                         child: UnDraw(
                             illustration: UnDrawIllustration.beer,
                             color: HypeColors.HypeLightBlue),
                         decoration: BoxDecoration(
                             color: HypeColors.HypeDeepSea,
-                            boxShadow: const [BoxShadow(
-                              color: Colors.black26,
-                              spreadRadius: 5.0,
-                              blurRadius: 7.0,
-                              offset: Offset(0, 2),
-                            )],
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Colors.black26,
+                                spreadRadius: 5.0,
+                                blurRadius: 7.0,
+                                offset: Offset(0, 2),
+                              )
+                            ],
                             borderRadius:
-                            BorderRadius.all(Radius.circular(15.0))),
+                                BorderRadius.all(Radius.circular(15.0))),
                       ),
                     )
                   ],
+                ),
+                SizedBox(height: 20.0,),
+                //Graph to be displayed
+                Padding(
+                  padding: const EdgeInsets.only(top: 40.0),
+                  child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      child: SfCartesianChart(
+                          primaryXAxis: CategoryAxis(
+                              labelPlacement: LabelPlacement.onTicks,
+                              labelPosition: ChartDataLabelPosition.outside),
+                          // Chart title
+                          title: ChartTitle(
+                              text: 'Weekly Sales Analysis',
+                              textStyle: TextStyle(
+                                  color: HypeColors.HypeBronze,
+                                  fontWeight: FontWeight.bold)),
+                          // Enable legend
+                          legend: Legend(isVisible: true),
+                          // Enable tooltip
+                          tooltipBehavior: TooltipBehavior(enable: true),
+                          enableAxisAnimation: true,
+                          series: <ChartSeries<_SalesData, String>>[
+                            SplineSeries<_SalesData, String>(
+                                dataSource: data,
+                                xValueMapper: (_SalesData sales, _) =>
+                                    sales.year,
+                                yValueMapper: (_SalesData sales, _) =>
+                                    sales.sales,
+                                name: '',
+                                yAxisName: 'Bottles in Thousands'),
+                          ])),
                 )
               ],
             ),
@@ -133,4 +179,11 @@ class _DashboardScreenState extends State<DashboardScreen>
       ),
     );
   }
+}
+
+class _SalesData {
+  _SalesData(this.year, this.sales);
+
+  final String year;
+  final double sales;
 }
