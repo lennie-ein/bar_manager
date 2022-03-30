@@ -37,6 +37,7 @@ dependencies:
   syncfusion_flutter_charts: ^19.4.56
   ms_undraw: ^3.1.0+2
   fancy_bottom_navigation: ^0.3.3
+  motion_tab_bar_v2: ^0.2.6
 
 
 dev_dependencies:
