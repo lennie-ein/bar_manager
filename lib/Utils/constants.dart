@@ -7,4 +7,5 @@ mixin HypeColors{
   static Color HypeLightBronze = Color(0xFFf4d35e);
   static Color HypeBgBlue = Color(0xFFd9ead3);
   static Color HypeFresia = Color(0xFFEFE7BC);
+  static Color HypeDeepSea = Color(0xFF76A6A3);
 }

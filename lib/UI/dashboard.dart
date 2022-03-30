@@ -3,7 +3,9 @@ import 'package:bar_manager/UI/storeanalytics.dart';
 import 'package:bar_manager/Utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:motion_tab_bar_v2/motion-tab-bar.dart';
+import 'package:ms_undraw/ms_undraw.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -55,15 +57,79 @@ class _DashboardScreenState extends State<DashboardScreen>
         textStyle: TextStyle(
             color: HypeColors.HypeBronze, fontWeight: FontWeight.bold),
       ),
-      body: TabBarView(
-        children: const [StoreAnalyticsScreen(),
-          Center(
-            child: Text("Home"),
-          ),
-          OrdersScreen(),
+      body: SafeArea(
+        child: TabBarView(
+          children: [
+            const StoreAnalyticsScreen(),
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 10.0, top: 10),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Dashboard",
+                        style: TextStyle(
+                            color: HypeColors.HypeBronze,
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: GoogleFonts.bangers().fontFamily),
+                      ),
+                    ],
+                  ),
+                ),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 45.0, top: 15),
+                      child: Container(
+                        width: 150,
+                        height: 150,
+
+                        child: UnDraw(
+                            illustration: UnDrawIllustration.beer,
+                            color: HypeColors.HypeLightBlue),
+                        decoration: BoxDecoration(
+                            color: HypeColors.HypeDeepSea,
+                            boxShadow: const [BoxShadow(
+                              color: Colors.black26,
+                              spreadRadius: 5.0,
+                              blurRadius: 10.0,
+                              offset: Offset(0, 2),
+                            )],
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(15.0))),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 45.0, top: 15),
+                      child: Container(
+                        width: 150,
+                        height: 150,
+
+                        child: UnDraw(
+                            illustration: UnDrawIllustration.beer,
+                            color: HypeColors.HypeLightBlue),
+                        decoration: BoxDecoration(
+                            color: HypeColors.HypeDeepSea,
+                            boxShadow: const [BoxShadow(
+                              color: Colors.black26,
+                              spreadRadius: 5.0,
+                              blurRadius: 7.0,
+                              offset: Offset(0, 2),
+                            )],
+                            borderRadius:
+                            BorderRadius.all(Radius.circular(15.0))),
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
+            const OrdersScreen(),
           ],
-        controller: _tabController,
-        physics: AlwaysScrollableScrollPhysics(),
+          controller: _tabController,
+        ),
       ),
     );
   }
