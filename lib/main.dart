@@ -1,3 +1,4 @@
+import 'package:bar_manager/UI/barselection.dart';
 import 'package:bar_manager/UI/dashboard.dart';
 import 'package:bar_manager/UI/login.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const LoginScreen(),
+      home: const BarSelectionScreen(),
     );
   }
 }

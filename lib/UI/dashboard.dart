@@ -111,7 +111,7 @@ class _DashboardScreenState extends State<DashboardScreen>
                               )
                             ],
                             borderRadius:
-                                BorderRadius.all(Radius.circular(15.0))),
+                                const BorderRadius.all(Radius.circular(15.0))),
                       ),
                     ),
                     Padding(
@@ -133,12 +133,12 @@ class _DashboardScreenState extends State<DashboardScreen>
                               )
                             ],
                             borderRadius:
-                                BorderRadius.all(Radius.circular(15.0))),
+                                const BorderRadius.all(Radius.circular(15.0))),
                       ),
                     )
                   ],
                 ),
-                SizedBox(height: 40.0,),
+                const SizedBox(height: 40.0,),
                 //Graph to be displayed
                 Padding(
                   padding: const EdgeInsets.only(top: 40.0),
