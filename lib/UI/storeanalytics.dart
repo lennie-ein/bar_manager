@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ms_undraw/ms_undraw.dart';
 
 import '../Utils/constants.dart';
 
@@ -36,6 +37,15 @@ class _StoreAnalyticsScreenState extends State<StoreAnalyticsScreen>
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: 200,
+                child: Row(
+                  children: [
+                    UnDraw(
+                      illustration: UnDrawIllustration.stock_prices,
+                      color: HypeColors.HypeLightBlue,
+                      height: 150,
+                    )
+                  ],
+                ),
                 decoration: BoxDecoration(
                     color: HypeColors.HypeDeepSea,
                     borderRadius: const BorderRadius.only(
