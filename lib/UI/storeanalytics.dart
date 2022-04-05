@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import '../Utils/constants.dart';
 
 class StoreAnalyticsScreen extends StatefulWidget {
   const StoreAnalyticsScreen({Key? key}) : super(key: key);
@@ -7,9 +10,31 @@ class StoreAnalyticsScreen extends StatefulWidget {
   State<StoreAnalyticsScreen> createState() => _StoreAnalyticsScreenState();
 }
 
-class _StoreAnalyticsScreenState extends State<StoreAnalyticsScreen> with TickerProviderStateMixin {
+class _StoreAnalyticsScreenState extends State<StoreAnalyticsScreen>
+    with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    return Container(  );
+    return Scaffold(
+      backgroundColor: HypeColors.HypeBgBlue,
+      body: SafeArea(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 10.0, top: 10),
+              child: Text(
+                "Store Analytics",
+                style: TextStyle(
+                    color: HypeColors.HypeBronze,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 35,
+                    fontFamily: GoogleFonts.balooTamma().fontFamily),
+              ),
+            ),
+
+            Container(width: MediaQuery.of(context).size.width, color: HypeColors.HypeBronze ,height: 200,)
+          ],
+        ),
+      ),
+    );
   }
 }
