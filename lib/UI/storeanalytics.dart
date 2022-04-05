@@ -30,8 +30,19 @@ class _StoreAnalyticsScreenState extends State<StoreAnalyticsScreen>
                     fontFamily: GoogleFonts.balooTamma().fontFamily),
               ),
             ),
-
-            Container(width: MediaQuery.of(context).size.width, color: HypeColors.HypeBronze ,height: 200,)
+            Padding(
+              padding: EdgeInsets.only(
+                  left: MediaQuery.of(context).size.width * 1 / 7),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: 200,
+                decoration: BoxDecoration(
+                    color: HypeColors.HypeDeepSea,
+                    borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        bottomLeft: Radius.circular(20))),
+              ),
+            )
           ],
         ),
       ),
