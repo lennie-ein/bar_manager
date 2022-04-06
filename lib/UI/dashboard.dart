@@ -98,7 +98,7 @@ class _DashboardScreenState extends State<DashboardScreen>
                         width: 150,
                         height: 150,
                         child: UnDraw(
-                            illustration: UnDrawIllustration.beer,
+                            illustration: UnDrawIllustration.statistic_chart,
                             color: HypeColors.HypeLightBlue),
                         decoration: BoxDecoration(
                             color: HypeColors.HypeDeepSea,
@@ -120,7 +120,7 @@ class _DashboardScreenState extends State<DashboardScreen>
                         width: 150,
                         height: 150,
                         child: UnDraw(
-                            illustration: UnDrawIllustration.beer,
+                            illustration: UnDrawIllustration.statistics,
                             color: HypeColors.HypeLightBlue),
                         decoration: BoxDecoration(
                             color: HypeColors.HypeDeepSea,
