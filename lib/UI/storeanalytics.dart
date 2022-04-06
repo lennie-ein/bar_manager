@@ -43,6 +43,11 @@ class _StoreAnalyticsScreenState extends State<StoreAnalyticsScreen>
                       illustration: UnDrawIllustration.stock_prices,
                       color: HypeColors.HypeLightBlue,
                       height: 150,
+                    ),
+                    Text(
+                      "Product Analysis",
+                      style: TextStyle(
+                          fontFamily: GoogleFonts.balooTamma().fontFamily),
                     )
                   ],
                 ),
@@ -52,7 +57,67 @@ class _StoreAnalyticsScreenState extends State<StoreAnalyticsScreen>
                         topLeft: Radius.circular(20),
                         bottomLeft: Radius.circular(20))),
               ),
-            )
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                  right: MediaQuery.of(context).size.width * 1 / 7),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: 200,
+                child: Row(
+                  children: [
+                    UnDraw(
+                      illustration: UnDrawIllustration.product_teardown,
+                      color: HypeColors.HypeLightBlue,
+                      height: 150,
+                    ),
+                    Text(
+                      "Product List",
+                      style: TextStyle(
+                          fontFamily: GoogleFonts.balooTamma().fontFamily),
+                    )
+                  ],
+                ),
+                decoration: BoxDecoration(
+                    color: HypeColors.HypeDeepSea,
+                    borderRadius: const BorderRadius.only(
+                        topRight: Radius.circular(20),
+                        bottomRight: Radius.circular(20))),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                  left: MediaQuery.of(context).size.width * 1 / 7),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: 200,
+                child: Row(
+                  children: [
+                    UnDraw(
+                      illustration: UnDrawIllustration.co_workers,
+                      color: HypeColors.HypeLightBlue,
+                      height: 150,
+                    ),
+                    Text(
+                      "Employee Details",
+                      style: TextStyle(
+                          fontFamily: GoogleFonts.balooTamma().fontFamily),
+                    )
+                  ],
+                ),
+                decoration: BoxDecoration(
+                    color: HypeColors.HypeDeepSea,
+                    borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        bottomLeft: Radius.circular(20))),
+              ),
+            ),
           ],
         ),
       ),
